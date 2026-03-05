@@ -1,0 +1,218 @@
+.contact {
+    padding: var(--section-padding);
+    background: var(--bg-primary);
+}
+
+.contact__container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contact__layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+/* ── Info panel ─────────────────── */
+.contact__info-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.contact__info-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    margin-bottom: 2rem;
+}
+
+.contact__details {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.contact__details li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.contact__details li span {
+    font-size: 1.1rem;
+}
+
+/* ── Form wrapper ───────────────── */
+.contact__form-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.contact__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.contact__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.contact__field label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.contact__field label span {
+    color: var(--accent-blue);
+}
+
+.contact__field input,
+.contact__field textarea {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    resize: vertical;
+}
+
+.contact__field input::placeholder,
+.contact__field textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.contact__field input:focus,
+.contact__field textarea:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+.input--error {
+    border-color: #ef4444 !important;
+}
+
+.contact__err {
+    font-size: 0.75rem;
+    color: #f87171;
+    font-weight: 500;
+}
+
+.contact__alert {
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    color: #fca5a5;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+/* ── Submit button ──────────────── */
+.contact__submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--gradient-primary);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.9rem 2rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+}
+
+.contact__submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(59, 130, 246, 0.45);
+}
+
+.contact__submit-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* ── Spinner ────────────────────── */
+.contact__spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ── Success ────────────────────── */
+.contact__success {
+    text-align: center;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact__success-icon {
+    font-size: 3rem;
+}
+
+.contact__success h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.contact__success p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* ── Responsive ─────────────────── */
+@media (max-width: 768px) {
+    .contact__layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .contact__row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact__form-wrap {
+        padding: 1.75rem;
+    }
+}

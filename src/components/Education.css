@@ -1,0 +1,183 @@
+.education {
+    padding: var(--section-padding);
+    background: var(--bg-primary);
+}
+
+.education__container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.education__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.education__col-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* ── Education card ─── */
+.edu-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.edu-card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-3px);
+}
+
+.edu-card__icon {
+    font-size: 1.8rem;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 130, 246, 0.08);
+    border-radius: 10px;
+}
+
+.edu-card__body {
+    flex: 1;
+}
+
+.edu-card__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+}
+
+.edu-card__type {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.18rem 0.6rem;
+    border-radius: 100px;
+    background: rgba(59, 130, 246, 0.1);
+    color: #60a5fa;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.edu-card__period {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.edu-card__degree {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
+}
+
+.edu-card__institution {
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.edu-card__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.edu-card__detail {
+    font-weight: 700;
+    color: var(--accent-blue);
+}
+
+/* ── Internship card ─── */
+.intern-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    transition: transform 0.3s;
+}
+
+.intern-card:hover {
+    transform: translateY(-3px);
+}
+
+.intern-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+}
+
+.intern-card__icon {
+    font-size: 2rem;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.intern-card__role {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0.3rem 0 0.4rem;
+}
+
+.intern-card__company {
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+}
+
+.intern-card__points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.intern-card__points li {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    padding-left: 1.25rem;
+    position: relative;
+}
+
+.intern-card__points li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent-blue);
+    font-size: 0.75rem;
+    top: 0.2rem;
+}
+
+@media (max-width: 768px) {
+    .education__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
