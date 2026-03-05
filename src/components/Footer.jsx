@@ -10,9 +10,9 @@ const Footer = () => (
                     <p className="footer__email">niranjantm06@gmail.com &nbsp;|&nbsp; 9363231171</p>
                 </div>
                 <div className="footer__social">
-                    <a href="https://linkedin.com/in/niranjantm" target="_blank" rel="noreferrer" className="footer__social-link">LinkedIn</a>
-                    <a href="https://github.com/niranjantm" target="_blank" rel="noreferrer" className="footer__social-link">GitHub</a>
-                    <a href="https://leetcode.com/niranjantm" target="_blank" rel="noreferrer" className="footer__social-link">LeetCode</a>
+                    <a href="https://linkedin.com/in/niranjan-t-m-29baa1295" target="_blank" rel="noreferrer" className="footer__social-link">LinkedIn</a>
+                    <a href="https://github.com/niranjan169" target="_blank" rel="noreferrer" className="footer__social-link">GitHub</a>
+                    <a href="https://leetcode.com/u/Niranjan_TM/" target="_blank" rel="noreferrer" className="footer__social-link">LeetCode</a>
                 </div>
             </div>
             <div className="footer__divider" />

@@ -63,7 +63,7 @@ const Projects = () => (
                             <div className="project-card__icon" style={{ background: `${p.color}20` }}>
                                 {p.icon}
                             </div>
-                            <a className="project-card__github-btn" href="https://github.com/niranjantm" target="_blank" rel="noreferrer" aria-label="GitHub">
+                            <a className="project-card__github-btn" href="https://github.com/niranjan169" target="_blank" rel="noreferrer" aria-label="GitHub">
                                 <GitHubIcon /> GitHub
                             </a>
                         </div>

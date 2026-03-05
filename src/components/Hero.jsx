@@ -10,9 +10,9 @@ const fadeUp = (delay = 0) => ({
 })
 
 const SOCIALS = [
-    { label: 'LinkedIn', href: 'https://linkedin.com/in/niranjantm', icon: '💼' },
-    { label: 'GitHub', href: 'https://github.com/niranjantm', icon: '🐙' },
-    { label: 'LeetCode', href: 'https://leetcode.com/niranjantm', icon: '🧩' },
+    { label: 'LinkedIn', href: 'https://linkedin.com/in/niranjan-t-m-29baa1295', icon: '💼' },
+    { label: 'GitHub', href: 'https://github.com/niranjan169', icon: '🐙' },
+    { label: 'LeetCode', href: 'https://leetcode.com/u/Niranjan_TM/', icon: '🧩' },
 ]
 
 const Hero = () => (
