@@ -1,0 +1,139 @@
+.voice-nav-container {
+    position: fixed;
+    right: 30px;
+    bottom: 160px;
+    /* Sits exactly below FloatingActions */
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .voice-nav-container {
+        right: 20px;
+        bottom: 140px;
+    }
+}
+
+.voice-transcript {
+    background: rgba(12, 8, 8, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid #fb7185;
+    color: #e2e8f0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(225, 29, 72, 0.3);
+    pointer-events: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+[data-theme="light"] .voice-transcript {
+    background: rgba(250, 250, 250, 0.9);
+    color: #1e293b;
+}
+
+.voice-nav-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(12, 8, 8, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(225, 29, 72, 0.3);
+    color: #fb7185;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.voice-nav-btn svg {
+    width: 22px;
+    height: 22px;
+}
+
+[data-theme="light"] .voice-nav-btn {
+    background: rgba(250, 250, 250, 0.8);
+    border: 1px solid rgba(225, 29, 72, 0.2);
+}
+
+.voice-nav-btn:hover {
+    transform: scale(1.1);
+    border-color: #fb7185;
+    box-shadow: 0 0 15px rgba(225, 29, 72, 0.4);
+}
+
+/* Listening State */
+.voice-nav-btn--listening {
+    border-color: #fbbf24;
+    color: #fbbf24;
+    background: rgba(251, 191, 36, 0.1);
+}
+
+.voice-nav-glow {
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    border: 2px solid #fbbf24;
+    animation: pulseRing 1.5s infinite;
+    pointer-events: none;
+}
+
+@keyframes pulseRing {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+
+/* Audio waves animation when listening */
+.voice-waves {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    height: 16px;
+}
+
+.wave {
+    width: 3px;
+    background: #fbbf24;
+    border-radius: 2px;
+    animation: waveBob 1s infinite ease-in-out;
+}
+
+.wave:nth-child(1) {
+    height: 10px;
+    animation-delay: -0.4s;
+}
+
+.wave:nth-child(2) {
+    height: 16px;
+    animation-delay: -0.2s;
+}
+
+.wave:nth-child(3) {
+    height: 10px;
+    animation-delay: 0s;
+}
+
+@keyframes waveBob {
+
+    0%,
+    100% {
+        transform: scaleY(0.4);
+    }
+
+    50% {
+        transform: scaleY(1);
+    }
+}

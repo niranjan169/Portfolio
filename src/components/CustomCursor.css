@@ -1,0 +1,71 @@
+* {
+    cursor: none !important;
+}
+
+.cursor__dot {
+    position: fixed;
+    top: -5px;
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    background: #e11d48;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transition: transform 0.05s, width 0.15s, height 0.15s, background 0.15s;
+    box-shadow: 0 0 10px rgba(225, 29, 72, 0.8), 0 0 20px rgba(225, 29, 72, 0.4);
+}
+
+.cursor__dot--click {
+    width: 6px;
+    height: 6px;
+    background: #fb7185;
+}
+
+.cursor__ring {
+    position: fixed;
+    top: -18px;
+    left: -18px;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid rgba(225, 29, 72, 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99998;
+    transition: width 0.25s, height 0.25s, border-color 0.25s, top 0.25s, left 0.25s;
+}
+
+.cursor__ring--hover {
+    top: -28px;
+    left: -28px;
+    width: 56px;
+    height: 56px;
+    border-color: rgba(225, 29, 72, 0.9);
+    background: rgba(225, 29, 72, 0.06);
+    mix-blend-mode: difference;
+}
+
+.cursor__ring--click {
+    top: -12px;
+    left: -12px;
+    width: 24px;
+    height: 24px;
+    border-color: #e11d48;
+}
+
+.cursor--hidden {
+    opacity: 0;
+}
+
+@media (hover: none),
+(pointer: coarse) {
+
+    .cursor__dot,
+    .cursor__ring {
+        display: none;
+    }
+
+    * {
+        cursor: auto !important;
+    }
+}

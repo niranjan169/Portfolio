@@ -1,0 +1,105 @@
+.loading {
+    position: fixed;
+    inset: 0;
+    background: #080808;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    gap: 2rem;
+}
+
+/* Rotating rings */
+.loading__ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid transparent;
+}
+
+.loading__ring--1 {
+    width: 200px;
+    height: 200px;
+    border-color: rgba(225, 29, 72, 0.4) transparent transparent transparent;
+    animation: ringSpin 1.4s linear infinite;
+}
+
+.loading__ring--2 {
+    width: 160px;
+    height: 160px;
+    border-color: transparent rgba(225, 29, 72, 0.25) transparent transparent;
+    animation: ringSpin 1.8s linear infinite reverse;
+}
+
+.loading__ring--3 {
+    width: 230px;
+    height: 230px;
+    border-color: transparent transparent rgba(225, 29, 72, 0.15) transparent;
+    animation: ringSpin 2.5s linear infinite;
+}
+
+@keyframes ringSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading__center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.loading__initials {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    background: linear-gradient(135deg, #e11d48, #fb7185);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'Inter', sans-serif;
+}
+
+.loading__progress-num {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: rgba(225, 29, 72, 0.7);
+    letter-spacing: 0.1em;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Progress bar */
+.loading__bar-wrap {
+    width: 220px;
+    height: 2px;
+    background: rgba(225, 29, 72, 0.1);
+    border-radius: 2px;
+    position: relative;
+    z-index: 1;
+}
+
+.loading__bar {
+    height: 100%;
+    background: linear-gradient(90deg, #e11d48, #fb7185);
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(225, 29, 72, 0.6);
+    transition: width 0.02s linear;
+}
+
+.loading__label {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(225, 29, 72, 0.4);
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}

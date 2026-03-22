@@ -1,0 +1,113 @@
+.gitcity-sec {
+    position: relative;
+    padding: var(--section-padding);
+    background: transparent;
+    overflow: hidden;
+    margin-top: 4rem;
+}
+
+.gitcity-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    perspective: 1500px;
+    margin-bottom: 2rem;
+}
+
+.gitcity-grid {
+    display: grid;
+    /* 20 columns for weeks, 7 rows for days */
+    grid-template-columns: repeat(20, 16px);
+    grid-template-rows: repeat(7, 16px);
+    gap: 6px;
+
+    /* Isometric Projection transform */
+    transform-style: preserve-3d;
+    transform: rotateX(60deg) rotateZ(-45deg);
+    transition: transform 1s ease;
+}
+
+.gitcity-grid:hover {
+    transform: rotateX(65deg) rotateZ(-35deg) scale(1.05);
+}
+
+/* Base Block */
+.gitcity-block {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    transform-style: preserve-3d;
+    transform: translateZ(var(--b-height));
+    transition: transform 0.4s ease;
+}
+
+.gitcity-block:hover {
+    transform: translateZ(calc(var(--b-height) + 15px));
+}
+
+/* Faces */
+.block-face {
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.block-face--top {
+    width: 16px;
+    height: 16px;
+    background: var(--b-color);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    /* Top face sits on XY plane but moved up by Z */
+}
+
+/* Right wall drops down to Z=0 */
+.block-face--right {
+    width: 16px;
+    height: var(--b-height);
+    background: var(--b-color);
+    filter: brightness(0.6);
+    transform-origin: top left;
+    transform: rotateX(-90deg) translateY(-16px);
+    bottom: 0px;
+    left: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+/* Left Wall drops down to Z=0 */
+.block-face--left {
+    width: var(--b-height);
+    height: 16px;
+    background: var(--b-color);
+    filter: brightness(0.4);
+    transform-origin: top left;
+    transform: rotateY(90deg) translateX(-16px);
+    bottom: 16px;
+    left: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.block-glow {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--b-color);
+    filter: blur(8px);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Legend */
+.gitcity-legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.legend-box {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+}

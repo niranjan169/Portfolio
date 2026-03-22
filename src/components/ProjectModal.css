@@ -1,0 +1,347 @@
+/* ─── Backdrop ──────────────────────────────────────────────── */
+.modal__backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(3, 8, 20, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+/* ─── Panel ─────────────────────────────────────────────────── */
+.modal__panel {
+    position: relative;
+    width: 100%;
+    max-width: 760px;
+    max-height: 90vh;
+    background: linear-gradient(160deg, #0c1a30 0%, #0f1d38 60%, #0a1628 100%);
+    border: 1px solid rgba(var(--modal-rgb, 59, 130, 246), 0.22);
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow:
+        0 0 0 1px rgba(var(--modal-rgb, 59, 130, 246), 0.1),
+        0 40px 100px rgba(0, 0, 0, 0.7),
+        0 0 80px rgba(var(--modal-rgb, 59, 130, 246), 0.07);
+}
+
+/* Top accent bar */
+.modal__accent-bar {
+    height: 3px;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+/* ─── Close Button ──────────────────────────────────────────── */
+.modal__close-btn {
+    position: absolute;
+    top: 1.1rem;
+    right: 1.1rem;
+    z-index: 10;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.modal__close-btn:hover {
+    background: rgba(255, 50, 50, 0.15);
+    color: #f87171;
+    border-color: rgba(248, 113, 113, 0.3);
+    transform: rotate(90deg);
+}
+
+/* ─── Header ────────────────────────────────────────────────── */
+.modal__header {
+    padding: 1.4rem 1.75rem 0;
+    flex-shrink: 0;
+}
+
+.modal__header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.9rem;
+    border-radius: 100px;
+}
+
+/* ─── Tabs ──────────────────────────────────────────────────── */
+.modal__tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    margin: 1rem 1.75rem 0;
+    flex-shrink: 0;
+}
+
+.modal__tab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 0.6rem 1.1rem;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: -1px;
+}
+
+.modal__tab:hover {
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.modal__tab--active {
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+
+/* ─── Body (scrollable) ─────────────────────────────────────── */
+.modal__body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem 1.75rem 1.75rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 116, 139, 0.3) transparent;
+}
+
+.modal__body::-webkit-scrollbar {
+    width: 5px;
+}
+
+.modal__body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal__body::-webkit-scrollbar-thumb {
+    background: rgba(100, 116, 139, 0.3);
+    border-radius: 3px;
+}
+
+/* ─── Overview Tab ──────────────────────────────────────────── */
+.modal__overview {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.modal__overview-icon-wrap {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__overview-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.15));
+}
+
+.modal__overview-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+}
+
+.modal__overview-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.modal__tech-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.7rem;
+    border-radius: 6px;
+    border: 1px solid;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.modal__overview-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+}
+
+.modal__overview-body p {
+    font-size: 0.89rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.modal__github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--link-color, #3b82f6);
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 0.55rem 1.2rem;
+    background: rgba(var(--link-rgb, 59, 130, 246), 0.1);
+    border: 1px solid rgba(var(--link-rgb, 59, 130, 246), 0.3);
+    border-radius: 10px;
+    align-self: flex-start;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.modal__github-link:hover {
+    background: rgba(var(--link-rgb, 59, 130, 246), 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(var(--link-rgb, 59, 130, 246), 0.2);
+}
+
+/* ─── Workflow Timeline ──────────────────────────────────────── */
+.workflow__timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.workflow__step {
+    display: flex;
+    gap: 1.25rem;
+    position: relative;
+}
+
+.workflow__step-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.workflow__step-badge {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--modal-color, #3b82f6), rgba(var(--modal-rgb, 59, 130, 246), 0.5));
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 0 18px rgba(var(--modal-rgb, 59, 130, 246), 0.4);
+}
+
+.workflow__step-line {
+    flex: 1;
+    width: 2px;
+    background: linear-gradient(to bottom, rgba(var(--modal-rgb, 59, 130, 246), 0.4), rgba(var(--modal-rgb, 59, 130, 246), 0.08));
+    margin: 4px 0;
+    min-height: 28px;
+}
+
+.workflow__step-content {
+    padding: 0 0 1.8rem;
+    flex: 1;
+}
+
+.workflow__step-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+    line-height: 1.3;
+}
+
+.workflow__step-desc {
+    font-size: 0.845rem;
+    color: var(--text-secondary);
+    line-height: 1.72;
+}
+
+/* ─── Flowchart ─────────────────────────────────────────────── */
+.flowchart__wrap {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    padding: 1rem;
+    overflow: auto;
+}
+
+.flowchart__svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 440px;
+}
+
+@keyframes nodeAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.75);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ─── Responsive ────────────────────────────────────────────── */
+@media (max-width: 600px) {
+    .modal__panel {
+        max-height: 96vh;
+        border-radius: 18px;
+    }
+
+    .modal__header,
+    .modal__tabs,
+    .modal__body {
+        padding-left: 1.1rem;
+        padding-right: 1.1rem;
+    }
+
+    .modal__tabs {
+        margin-left: 1.1rem;
+        margin-right: 1.1rem;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .modal__tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .modal__tab {
+        white-space: nowrap;
+        padding: 0.55rem 0.8rem;
+    }
+
+    .flowchart__svg {
+        min-width: 500px;
+    }
+}

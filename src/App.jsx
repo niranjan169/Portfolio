@@ -18,7 +18,7 @@ import VoiceNav from './components/VoiceNav'
 import LoadingScreen from './components/LoadingScreen'
 import BackToTop from './components/BackToTop'
 import FloatingActions from './components/FloatingActions'
-import './App.css'
+
 
 function App() {
     const [loaded, setLoaded] = useState(false)
